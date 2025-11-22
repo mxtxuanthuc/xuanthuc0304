@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <!-- Metadata cơ bản -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TendyShop - Kinh doanh thời trang trực tuyến</title>
+    <!-- Thư viện biểu tượng Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- File CSS chính -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-success {
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+
+        .notification-error {
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Phần header trên cùng với logo xã hội và thông báo -->
+        <div class="header-top">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-messenger"></i></a>
+                </div>
+                <div class="top-right">
+                    <a href="#"><i class="fas fa-bell"></i> Thông báo</a>
+                    <a href="#"><i class="fas fa-globe"></i> Tiếng Việt</a>
+                    <a href="login.html">Đăng nhập</a>
+                    <a href="register.html">Đăng kí</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần header chính với logo, tìm kiếm và giỏ hàng -->
+        <div class="header-main">
+            <div class="container">
+                <!-- Logo của shop -->
+                <div class="logo">Logo</div>
+
+                <!-- Ô tìm kiếm sản phẩm -->
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <main>
+        <!-- Phần hero (banner chính) với hình ảnh lớn và mô tả -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>TendyShop - Thời trang đa phong cách</h2>
+                    <p>Khám phá bộ sưu tập thời trang hàng đầu với chất lượng tốt nhất. Từ áo, quần cho đến phụ kiện,
+                        tất cả đều được chọn lựa kỹ càng để mang đến cho bạn phong cách độc đáo và tự tin.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Khám phá ngay</button>
+                        <button class="btn btn-secondary">Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/aothun1.png" alt="Hero Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần sản phẩm nổi bật thứ nhất (3 sản phẩm) -->
+        <section class="featured-products">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/aothun2.jpg" alt="Áo thun thời trang">
+                        <h3>Áo thun thời trang nam</h3>
+                        <p>Áo thun cotton 100%, thoáng mát, phù hợp cho mọi dịp. Có nhiều màu sắc lựa chọn.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/aothun3.jpg" alt="Quần jean nữ">
+                        <h3>Quần jean nữ cao cấp</h3>
+                        <p>Quần jean denim bền chắc, thiết kế hiện đại. Tôn dáng và thoải mái khi mặc.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/aothun4.jpg" alt="Áo khoác bomber">
+                        <h3>Áo khoác bomber unisex</h3>
+                        <p>Áo khoác phong cách, dễ phối với nhiều trang phục. Chất liệu nhẹ, thoáng khí.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần sản phẩm nổi bật thứ hai (3 sản phẩm) -->
+        <section class="featured-products featured-products-2">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/aothun5.jpg" alt="Váy đầm nữ">
+                        <h3>Váy đầm nữ sang trọng</h3>
+                        <p>Váy đầm dự tiệc, công sở. Chất vải mềm mịn, tôn dáng hoàn hảo cho nữ giới.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/aothun6.jpg" alt="Giày sneaker nam">
+                        <h3>Giày sneaker nam casual</h3>
+                        <p>Giày sneaker thoải mái, phong cách đương đại. Phù hợp cho các hoạt động hàng ngày.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/aothun1.png" alt="Mũ snapback">
+                        <h3>Mũ snapback thời trang</h3>
+                        <p>Mũ snapback phong cách, dễ điều chỉnh. Hoàn hảo để bổ sung phong cách của bạn.</p>
+                        <a href="detail.html" class="read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (chân trang) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Logo</h4>
+                </div>
+                <div class="footer-column">
+                    <h4>Về TendyShop</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Hỗ trợ khách hàng</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bán hàng</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách trả hàng</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 TendyShop. Tất cả các quyền được bảo lưu.</p>
+                <div class="footer-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản dịch vụ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+
+</html>
