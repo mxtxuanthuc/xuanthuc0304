@@ -1,0 +1,16 @@
+{
+  "name": "career-social-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "echo 'configure linter per app'",
+    "test": "echo 'configure tests per app'",
+    "dev:api": "pnpm --filter @career/api dev",
+    "dev:realtime": "pnpm --filter @career/realtime-gateway dev",
+    "dev:worker": "pnpm --filter @career/worker dev"
+  }
+}
