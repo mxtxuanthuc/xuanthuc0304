@@ -1,0 +1,6 @@
+export const AUTH_ERROR_CODES = {
+  INVALID_CREDENTIALS: 'AUTH_INVALID_CREDENTIALS',
+} as const;
+
+export const ACCESS_TOKEN_TTL_SECONDS = 900;
+export const REFRESH_TOKEN_TTL_DAYS = 30;

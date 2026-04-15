@@ -1,0 +1,3 @@
+export const USERS_ERROR_CODES = {
+  DUPLICATE_EMAIL: 'USERS_DUPLICATE_EMAIL',
+} as const;
